@@ -11,7 +11,7 @@ LET THE ROCK OFF BEGIN!
 -----------------------------------------------------------------------------------
 The application performs a draw of nicknames in a group of registered players.
 
-It consits of:
+It consists of:
 - admin pannel which displays the list of registered players together with names of drawn persons. It also allow
 admin to start the game whereby drawing button on each user's profile is enabled as well as further registration or alteration of any data by users are disabled. Also, until this button is clicked, admin can delete each player separately. Otherwise the option disappear to avoid a mess. There is also the button to delete all the players which in fact starts new game.
 
