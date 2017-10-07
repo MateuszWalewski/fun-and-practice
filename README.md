@@ -1,6 +1,6 @@
 # christmas-app
 
-This is my first web application project.
+This is my first web application.
 
 
 Here I put emphasis on the process of making mistakes and fixing them in the stage of double-checking.
