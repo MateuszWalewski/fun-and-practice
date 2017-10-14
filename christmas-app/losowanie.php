@@ -102,8 +102,7 @@ catch(Exception $e)
 	{
 		echo '<span style="color:red;">Błąd serwera! Przepraszamy za niedogodności i poprosimy o rejestracje w innym terminie!</span>';
 			echo '<br/>Informacja developerska: '.$e;
-	} 	
-				
+	} 					
 ?>
 <!DOCTYPE HTML>
 <html lang="pl">
@@ -111,63 +110,51 @@ catch(Exception $e)
 	<meta charset="utf-8" />
 	<title>Losowanie</title>
 
-	<link rel="stylesheet" href="ssstyle_v3.css" type="text/css" />
+	<link rel="stylesheet" href="style_v3.css" type="text/css" />
 	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
 
 		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
-		
 		<script type="text/javascript" src="ajax_request.js"> </script>
-			
 		
 </head>
 <body>
-
 		<div id="container">
-		
 		<?php
-		echo '<div id="witaj"> Witaj '.$_SESSION['ch_nick'].'!  [ <a href="logout.php"> Wyloguj się!</a> ] <div>';
+		echo '<span id="witaj"> Witaj '.$_SESSION['ch_nick'].'!  [ <a href="logout.php"> Wyloguj się!</a> ] <span>';
 		if( isset($_SESSION['menu_register_option_flag']) && ($_SESSION['menu_register_option_flag'] == true ))
 		{
-			echo '<div id="zmien"> [ <a href="zmiana.php">  Zmień swoje dane</a> ] </div>';	
+			echo '<span id="zmien"> [ <a href="zmiana.php">  Zmień swoje dane</a> ] </span>';	
+		
 		}
 		if(isset($_SESSION['comment_flag_1']) && $_SESSION['comment_flag_1'] == true)
 		{
-		
 			echo '<div id="zapraszam"> Zapraszam do losowania! Naciśnij przycisk na środku ekranu aby rozpocząć. </div>';
 			echo '<div id="wyl">Wylosowane imie to:</div>' ;
 		}
 		if(isset($_SESSION['draw_flag']) && ($_SESSION['draw_flag'] == true) )
 		{
-			echo '<div id="dokonales"> Dokonałeś już losowania! Wylosowana przez Ciebie
-							osoba to: '.'<span id="los_im2" >'.$_SESSION['result']. '</span>' .'. Czas rozpocząć poszukiwania! :)</p>';
+			echo '<div id="dokonales"> Dokonałeś losowania! Wylosowana przez Ciebie
+							osoba to: '.'<span id="los_im2" >'.$_SESSION['drawn_person']. '</span>' .'. Czas rozpocząć poszukiwania! :)</p>';
 			echo  '<div id="juz" > Już dokonałeś losowania! </div>';		
 		}
 		elseif (isset($_SESSION['comment_flag_2']) && $_SESSION['comment_flag_2'] == true)
 		{
-				echo '<div id="dokonales"> Dokonałeś losowania! Wylosowana przez Ciebie
-						osoba to: '.'<span id="los_im2" >'.$_SESSION['wylosowane_imie']. '</span>' .'. Czas rozpocząć poszukiwania! :)</div>';
-						
+				echo '<div id="dokonales"> Dokonałeś już losowania! Wylosowana przez Ciebie
+						osoba to: '.'<span id="los_im2" >'.$_SESSION['wylosowane_imie']. '</span>' .'. Czas rozpocząć poszukiwania! :)</div>';		
 				echo  '<div id="juz" > Już dokonałeś losowania! </div>';		
 		}
-		
 		if(isset($_SESSION['comment_flag_3']) && $_SESSION['comment_flag_3'] == true)
 		{
-		
-			echo '<div id="zamalo">'.'Losowanie zablokowane. Poczekajmy, aż wszyscy zameldują się na pokładzie :)'. '</span>';
+			echo '<div id="zamalo">'.'Losowanie zablokowane. Poczekajmy, aż wszyscy zameldują się na pokładzie :)'. '</div>';
 		 
 		}
-		
-		
 		if(!isset($_SESSION['draw_flag']) && ($_SESSION['comment_flag_3'] == false) && ($_SESSION['comment_flag_1'] == true))
 		{
 			
 			echo '<button id="submit">  Losuj imię! </button>';
 		}
 		?>
-		
 		<div id="responsecontainer" align="center"> </div>
-		
-		</div>
-		
+		</div>		
 </body>
 </html>
