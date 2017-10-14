@@ -6,12 +6,13 @@ function usun_osobe(id)
 		url: "admin_aux_2.php",
 		data: {personId: id},
 		dataType: "html",
-		success: function(response){                    
+		success: function(response)
+		{                    
 			
 		location.reload(true);
 					
-				}		
-		});
+		}		
+		  });
 		
-		  }
+}
   

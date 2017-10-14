@@ -5,13 +5,14 @@ function zezw()
 		type: "POST",
 		url: "admin_aux_4.php",
 		dataType: "html",
-		success: function(response){                    
+		success: function(response)
+		{                    
 		
 			location.reload(true);
 					
-				}		
-		});
+		}		
+		  });
 		
-		  }
+}
   
   

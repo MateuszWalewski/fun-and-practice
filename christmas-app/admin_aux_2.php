@@ -1,6 +1,6 @@
 <?php
 
-
+//deletion of the player with the given id 
 
 if(isset($_POST['personId']))
 {
@@ -29,8 +29,6 @@ if(isset($_POST['personId']))
 						if(!$result) throw new Exception($polaczenie->error);
 						// dropping and adding new id column to avoid numbering mess
 						
-						//header('Location: admin.php');
-				
 					$polaczenie->close();				
 				
 				}

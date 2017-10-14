@@ -1,8 +1,6 @@
-
-
 <?php
 
-							
+//update of 'admin permission' flag							
 											
 session_start(); 
 

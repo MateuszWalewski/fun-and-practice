@@ -73,7 +73,7 @@
 								$result->free();
 								$result2->free();
 								
-							$_SESSION['comment_flag_1'] = true;
+							$_SESSION['comment_flag_1'] = true; //values triggering display of the proper comment in HTML side
 							$_SESSION['comment_flag_2'] = false;
 										
 					}

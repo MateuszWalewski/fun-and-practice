@@ -1,5 +1,7 @@
 <?php
 
+// updating proper info in DB after drawing for a given player
+
 	session_start(); 
 	require_once "connect.php"; //server information
 		
@@ -13,7 +15,7 @@ echo '<span id="los_im">'.$drawn_name.'</span>';
 	try
 	{			
 									
-		$polaczenie2 = @new mysqli($host, $db_user, $db_password, $db_name); // connection to save flags and drawn names in DB
+		$polaczenie2 = @new mysqli($host, $db_user, $db_password, $db_name); 
 			
 			if($polaczenie2->connect_errno!=0)
 			{

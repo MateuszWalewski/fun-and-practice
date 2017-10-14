@@ -1,7 +1,6 @@
 
-
 <?php
-
+//deletion of all players from admin pannel
 							
 											
 session_start(); 
@@ -38,8 +37,6 @@ require_once "connect.php"; //server information
 						//clear admin permission flag to allow for new game
 						
 							
-						
-						
 						$polaczenie->close();				
 				
 				}

@@ -28,7 +28,7 @@
 				if(!$result0) throw new Exception($polaczenie->error);
 					$row_1 = mysqli_fetch_assoc($result0);
 	
-					$_SESSION['losow'] = $row_1['losowal']; //variable to disable player delete option after starting the game
+					$_SESSION['admin_permission_flag'] = $row_1['losowal']; //variable to disable player delete option after starting the game
 			
 							$result0->free();
 							$polaczenie->close();				
@@ -67,8 +67,9 @@
 		<?php
 		echo "<p>Witaj ".$_SESSION['imie'].'! [ <a href="logout.php"> Wyloguj się!</a> ]<p>';
 	
-		if(isset($_SESSION['losow']) && ($_SESSION['losow'] == 1))
+		if(isset($_SESSION['admin_permission_flag']) && ($_SESSION['admin_permission_flag'] == 1))
 		{
+			//disable player deletion option
 			echo "<style> .del{visibility:hidden; } </style>";
 		}
 	
