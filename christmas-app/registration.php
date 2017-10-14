@@ -90,7 +90,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 			$haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT); // hashing password
 			
 				
-			$sekret ="6LdDQTEUAAAAAKRrozyu7GNlBh6UZ5hult_4yTs8";
+			$sekret ="6LcvcTAUAAAAANKyNyf2oE9FcYowsbbYcweDM_wE";
 			$sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
 			
 			
@@ -162,14 +162,10 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 							}
 						}
 					
-					
 					$polaczenie->close();
 					
-					
-			
 				}
-				
-				
+					
 				
 			}
 			catch(Exception $e)
@@ -193,7 +189,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Losowanie - załóż konto</title>
-	<link rel="stylesheet" type="text/css" href="style_vv2.css" />
+	<link rel="stylesheet" type="text/css" href="style_v2.css" />
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 		
 	<style>
@@ -275,7 +271,7 @@ var merry = new Audio("snd/merry.mp3");
 
  <input type="password" name="haslo2" placeholder="Powtórz hasło"/>
 
-<div class="g-recaptcha" data-sitekey="6LdDQTEUAAAAAN8t7XBTioLJqYQNNiLaPRc2TmAf"></div>
+<div class="g-recaptcha" data-sitekey="6LcvcTAUAAAAABlYUA-Ly6-pYXdJuYr4GZIixLX0"></div>
 		<?php
 		
 			if(isset($_SESSION['e_bot']))

@@ -11,7 +11,6 @@ body
 	
 }
 
-
 #container
 {
 	
@@ -25,12 +24,39 @@ body
 	
 	
 }
+#responsecontainer
+{
+	
+	margin-top: 20px;
+}
+#witaj
+{
+	
+	display: inline-block;
+}
+#zmien
+{
+	display: inline-block;
+}
+#wyl
+{
+	margin-top: 60px;
+}
+#dokonales
+{
+	margin-top: 20px;
+}
 
-
+#zapraszam
+{
+	margin-top: 20px;
+	
+}
 
 #los_im
 {
 	color: #f55369;
+	margin-top: 70px;
 	
 }
 #los_im2
@@ -40,27 +66,17 @@ body
 }
 #zamalo
 {
+	margin-top: 20px;
 	color: #f55369;
 	
 }
 
-
-#ll
-{
-	
-	display: none;
-}
-#wyl
-{
-	margin-top: 60px;
-}
 #juz
 {
 	color: #f55369;
-	display: block;
-	margin-top: -70px;
+	margin-top: 70px;
+	
 }
-
 a
 {
 	color: #b2ffef;
@@ -73,10 +89,7 @@ a:hover
 	
 }
 
-
-
-
-input[type=submit]
+#submit
 {
 	width: 250px;
 	background-color: #f55369;
@@ -93,14 +106,12 @@ input[type=submit]
 	margin-top: 20px;
 	
 	
-	
 }
-input[type=submit]:hover
+#submit:hover
 {
 	background-color: #f66479;
 	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
 	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
-	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
-		
+	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);	
 }
 

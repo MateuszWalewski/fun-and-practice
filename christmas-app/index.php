@@ -26,7 +26,7 @@ else if((isset($_SESSION['zalogowany_admin'])) && ($_SESSION['zalogowany_admin']
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title> Logowanie do aplikacji Losowanie </title>
 
-	<link rel="stylesheet" href="style_vv2.css" type="text/css" />
+	<link rel="stylesheet" href="style_v2.css" type="text/css" />
 	
 	
 </head>

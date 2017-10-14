@@ -37,8 +37,7 @@ try
 					
 			
 					$result0->free();
-					$polaczenie0->close();
-				
+					$polaczenie0->close();		
 					
 			}
 }
@@ -152,8 +151,7 @@ if(isset($_POST['email'])) // check whether the form was sent
 					}
 					
 					$haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT); // hashing password
-					
-					
+						
 				}
 				else
 				{
@@ -200,8 +198,7 @@ if(isset($_POST['email'])) // check whether the form was sent
 					
 				if($haslo_OK==true)
 				{
-						
-						
+							
 						if($polaczenie->query("UPDATE imiona SET haslo='$haslo_hash' WHERE imie= '$current_name'"))
 						{
 								header('Location: zmiana.php');
@@ -213,8 +210,7 @@ if(isset($_POST['email'])) // check whether the form was sent
 							throw new Exception($polaczenie->error);
 							
 						}
-					
-					
+							
 				}
 				else header('Location: zmiana.php');
 					
@@ -224,11 +220,8 @@ if(isset($_POST['email'])) // check whether the form was sent
 					if($imie =="") unset($_SESSION['e_nick']);
 					if($haslo0 =="") unset($_SESSION['e_haslo0']);
 		
-		
 			}
-			
-			
-			
+				
 		}
 		catch(Exception $e)
 		{
@@ -251,7 +244,7 @@ if(isset($_POST['email'])) // check whether the form was sent
 	<meta charset="utf-8"/>
 	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 	<title>Losowanie - załóż konto</title>
-	<link rel="stylesheet" href="style_vv3.css" type="text/css" />
+	<link rel="stylesheet" href="style_v1.css" type="text/css" />
 	<script src='https://www.google.com/recaptcha/api.js'></script>
 		
 	<style>
@@ -346,13 +339,8 @@ var merry = new Audio("snd/merry.mp3");
 
  <input type="password" name="haslo2" placeholder="Powtórz hasło"/>
 
-
- 
 		<input type="submit" value="Zatwierdź zmiany"/>
-		
-
-		
-		
+			
 </form>
 <div>
 <img src="img/rsz_2santa.png" id="santa" onclick="merry.play()"/>

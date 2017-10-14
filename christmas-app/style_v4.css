@@ -15,7 +15,7 @@ body
 #container
 {
 	
-	width: 900px;
+	width: 1200px;
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 80px;
@@ -24,40 +24,83 @@ body
 	
 	
 	
-}
-#tabb
-{
-	
-	position: relative;
-	left: 130px;
-	
-	
 	
 }
+
 td
 {
-    width: 130px;
+	width: 140px;
+	text-align: center;
 }
 
 th
 {
-
-	width: 185px;
+	color: #f55369;
+	width: 180px;
+text-align: center;
 	
 }
 
+.del
+{
+	
+	width: 110px;
+	background-color: #f55369;
+	opacity: 0.75;
+	font-size: 16px;
+	color: white;
+	padding: 10px 10px;
+	margin-top: 5px;
+	border:none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+	
+}
+.del:hover
+{
+	background-color: #f66479;
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);	
+}
+.del2
+{
+	
+	width: 260px;
+	background-color: #f55369;
+	opacity: 0.75;
+	font-size: 16px;
+	color: white;
+	padding: 10px 10px;
+	margin-top: 5px;
+	border:none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+	
+}
+.del2:hover
+{
+	background-color: #f66479;
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);	
+}
 #usun
 {
-	position: relative;
-	top: 60px;
+	
+	margin-top: 40px;
 	
 	
 	
 }
 #zezwol
 {
-	position: relative;
-	top: 70px;
+	
+	top: 50px;
 	
 	
 	

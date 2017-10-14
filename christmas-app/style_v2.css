@@ -1,0 +1,184 @@
+body
+{
+	/* Background pattern from Subtle Patterns (https://www.toptal.com/designers/subtlepatterns/) */
+	background-image: url("img/pinkdust.png");
+	color: lightgray;
+	font-size: 20px;
+	font-family: 'Inconsolata', monospace;
+	font-weight: 700;
+	
+	
+	
+}
+
+
+
+#container
+{
+	
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: 80px;
+	padding: 20px;
+	position: relative;
+	text-align: center;
+	
+	
+	
+}
+
+
+
+
+a
+{
+	color: #b2ffef;
+	
+}
+a:hover
+{
+	cursor: pointer;
+	color: #31e3c1;
+	
+}
+
+input[type=password]
+{
+	margin-top: 110px;
+	
+}
+
+input[type=text],
+input[type=password],
+input[type=email]
+{
+	width: 250px;
+	background-color: #efefef;
+	color: #666666;
+	border: 2px solid #ddd;
+	border-radius: 5px;
+	font-size: 20px;
+	padding: 8px;
+	box-sizing: border-box;
+	outline: none;
+	margin-top: 10px;
+	
+}
+input[type=text]:focus,
+input[type=password]:focus,
+input[type=email]:focus
+{
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	background-color: #e9f3e9;
+	color: #21d2b1;
+	
+}
+
+input[type=submit]
+{
+	width: 250px;
+	background-color: #f55369;
+	opacity: 0.75;
+	font-size: 20px;
+	color: white;
+	padding: 15px 10px;
+	margin-top: 10px;
+	border:none;
+	border-radius: 5px;
+	cursor: pointer;
+	letter-spacing: 2px;
+	outline: none;
+	margin-top: 20px;
+	
+	
+	
+}
+input[type=submit]:hover
+{
+	background-color: #f66479;
+	-webkit-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	-moz-box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+	box-shadow: 3px 3px 30px 5px rgba(204,204,204,0.9);
+		
+}
+.g-recaptcha
+{
+	margin-top: 10px;
+	margin-left: 25px;
+	
+}
+#santa
+{
+	
+	position: absolute;
+	left: 420px;
+	top: 220px;
+	display:block;
+	margin-left: auto;
+	margin-right: auto;
+	cursor: pointer;
+	
+	
+}
+
+
+#reg
+{
+	color: #b2ffef;
+	text-align: center;
+	font-size: 18px;
+	display: block;
+	
+	
+}
+#reg:hover
+{
+	cursor: pointer;
+	color: #31e3c1;
+	
+}
+
+#warn
+{
+	
+	color: red;
+	text-align: center;
+	font-size: 19px;
+	display: block;
+	margin-top: 16px;
+	
+	
+}
+
+input::-webkit-input-placeholder
+{
+    color: #d8d6d6;
+	letter-spacing: 1px;
+}
+
+/* Firefox < 19 */
+input:-moz-placeholder
+{
+    color: #d8d6d6;
+	letter-spacing: 1px;
+}
+
+/* Firefox > 19 */
+input::-moz-placeholder
+{
+    color: #d8d6d6;
+	letter-spacing: 1px;
+}
+
+/* Internet Explorer 10 */
+input:-ms-input-placeholder
+{
+    color: #d8d6d6;
+	letter-spacing: 1px;
+}
+
+
+
