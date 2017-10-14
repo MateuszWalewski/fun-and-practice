@@ -1,5 +1,4 @@
 
-
 <?php
 // redirecting logged players
 session_start();
@@ -11,11 +10,6 @@ else if((isset($_SESSION['zalogowany_admin'])) && ($_SESSION['zalogowany_admin']
 
 
 ?>
-
-
-
-
-
 
 <!DOCTYPE HTML >
 
@@ -35,9 +29,7 @@ else if((isset($_SESSION['zalogowany_admin'])) && ($_SESSION['zalogowany_admin']
 
 <body>
 
-	
-	
-	
+
 	<div id="container">
 		<a id="reg" href="registration.php">Rejestracja - załóż konto!</a>
 
@@ -54,8 +46,6 @@ else if((isset($_SESSION['zalogowany_admin'])) && ($_SESSION['zalogowany_admin']
 	?> </p>
 	<br/>	
 		
-	
-
 	
 	</div>
 	
