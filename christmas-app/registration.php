@@ -90,7 +90,7 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 			$haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT); // hashing password
 			
 				
-			$sekret ="6LcvcTAUAAAAANKyNyf2oE9FcYowsbbYcweDM_wE";
+			$sekret ="6LdDQTEUAAAAAKRrozyu7GNlBh6UZ5hult_4yTs8";
 			$sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
 			
 			
@@ -271,7 +271,8 @@ var merry = new Audio("snd/merry.mp3");
 
  <input type="password" name="haslo2" placeholder="Powtórz hasło"/>
 
-<div class="g-recaptcha" data-sitekey="6LcvcTAUAAAAABlYUA-Ly6-pYXdJuYr4GZIixLX0"></div>
+<div class="g-recaptcha" data-sitekey="6LdDQTEUAAAAAN8t7XBTioLJqYQNNiLaPRc2TmAf"></div>
+
 		<?php
 		
 			if(isset($_SESSION['e_bot']))
