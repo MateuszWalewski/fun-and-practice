@@ -13,15 +13,15 @@ admin starts the game. Each player can draw one time per game.
 -----------------------------------------------------------------------------------
 Quick guide how to test the application:
 
-- register at least two players typing fictitous names, emails etc. (in a proper format)
-- log-in to the given player's pannel to check-out how it looks like
-- log-in to admin pannel using:
+- register at least two players typing fictitious names, emails etc. (in a proper format)
+- log in to the given player's pannel to check-out how it looks like
+- log in to admin pannel using:
 	-- login: admin
 	-- password: qwerty123
 	
 You should see the credentials of the already registered players together with 
 some actions to take.
-For ex. start from clicking "Zezwól na losowanie" and log into any player account
+For ex. start from clicking "Zezwól na losowanie" and log in to any player account
 to see what happened. Also check if registration of another player is possible.
 By clicking "Usuń wszystkie osoby" you clear the database and start the new game.
 
