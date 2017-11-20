@@ -1,6 +1,6 @@
-# adress-book
+# address-book
 
-The program imitating an adress-book with ability to:
+The program imitating an address-book with ability to:
 - add/delete a new contact
 - find contact by name, last name or id
 - display all contacts
