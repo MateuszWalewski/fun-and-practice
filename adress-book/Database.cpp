@@ -23,6 +23,8 @@ Database::Database()
         nextRecordNumber = 1;
     else
         nextRecordNumber = getLastRecordNumber()+1;
+	
+	file.close();
 }
 
 int Database::getLastRecordNumber()

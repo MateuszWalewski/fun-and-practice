@@ -19,16 +19,11 @@ public:
    void deleteRecord(int);
    vector<Record> loadDataFromFile();
    int getLastRecordNumber();
-   bool myfunction (Record i,Record j);
 
 
 private:
     vector<Record> records;
     int nextRecordNumber;
-
-
-
-
 
 };
 
