@@ -171,4 +171,6 @@ void cleanScreen()
    cout <<"Press any key to continue..." << endl;
    getch();
    system("cls");
+   cin.clear();
+   cin.ignore();
 }
