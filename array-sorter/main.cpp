@@ -1,132 +1,88 @@
-//The program applies different sorting algorithms to a randomized
-//array and compare its time of execution
-
-//It uses dedicated class defined in the following files:
-//ArraySorter.h
-//ArrayClass.cpp
-
 #include <iostream>
 #include <ctime>
-#include <unistd.h>
-#include <stdlib.h>
-#include "ArraySorter.h"
 #include <iomanip>
 
+#include "ArraySorterSelectionSort.h"
+#include "ArraySorterInsertionSort.h"
+#include "ArraySorterBubbleSort.h"
+#include "ArraySorterMergeSort.h"
+#include "ArraySorterQuickSort.h"
+#include "ArraySorterFactory.h"
+
 using namespace std;
+
+void displayArray(int numberOfElements, int arrayToBeDisplayed[])
+{
+    for(int i = 0; i < numberOfElements; i ++)
+    {
+        cout << arrayToBeDisplayed[i] <<" ";
+    }
+    cout << endl;
+}
+
+bool checkIfSorted(int numberOfElements, int arrayToBeChecked[])
+{
+    bool sorted = true;
+    for(int i=0; i<numberOfElements-1; i++)
+    {
+        if(arrayToBeChecked[i]>arrayToBeChecked[i+1]) sorted = false;
+
+    }
+    return sorted;
+
+}
+
+void randomizeArray(int numberOfElements, int arrayToBeRandomized[])
+{
+    srand(time(NULL)); // to enforce the same sequence of values after each call
+    for(int i=0; i<numberOfElements; i++)
+    {
+        arrayToBeRandomized[i] = rand()%numberOfElements+1;
+    }
+}
+
+void displayTitle(ArraySorterFactory::ArraySorterType sorterType, int numberOfElements)
+{
+    string title[5] = {"SelectionSort", "InsertionSort", "BubbleSort", "MergeSort", "QuickSort"};
+    cout <<"--------------------------------------------------" << endl;
+    cout<<"Algorithm type: "<<title[sorterType]<<endl;
+    cout<<"Number of elements to sort: "<<numberOfElements<<endl;
+    cout <<"--------------------------------------------------" << endl;
+
+}
+
+void performMeasurement(ArraySorterFactory::ArraySorterType sorterType, int numberOfElements, int arrayToBeSorted[])
+{
+    displayTitle(sorterType, numberOfElements);
+    randomizeArray(numberOfElements, arrayToBeSorted);
+   // displayArray(numberOfElements, arrayToBeSorted);
+    clock_t start,stop;
+    double executionTime;
+    unique_ptr<ArraySorter> ar = ArraySorterFactory::createArraySorter(sorterType, numberOfElements,arrayToBeSorted);
+    start = clock();
+    ar->launch();
+    stop = clock();
+    executionTime = (double)(stop-start) / CLOCKS_PER_SEC;
+    cout <<"Sorting status: ";
+    if(checkIfSorted(numberOfElements,arrayToBeSorted)) cout <<"Sorted" << endl;
+    else cout <<"Not sorted" << endl;
+    cout<<endl<<"Elapsed time:   "<<executionTime<<" s"<<endl;
+   // displayArray(numberOfElements, arrayToBeSorted);
+}
 
 
 int main()
 {
+    int numberOfElements = 15000; // change if you like
+    int arrayToBeSorted[numberOfElements];
 
-    clock_t start,stop;
-    double executionTime;
-    unsigned int numberOfElements;
-
-    cout <<"Insert the number of elements in array to be sorted:" << endl;
-    cin >> numberOfElements;
-    int* arrayToBeSorted = new int[numberOfElements];
-
-    //randomizing array
-    srand(time(NULL));
-    for(int i=0; i<numberOfElements; i++)
-    {
-        arrayToBeSorted[i] = rand()%numberOfElements+1;
-    }
-    //declaring backup array copy for unsort method
-    int* arrayToBeSortedOriginal = new int[numberOfElements];
-    copy ( arrayToBeSorted, arrayToBeSorted+numberOfElements, arrayToBeSortedOriginal );
-
-    //setting high time precision
     setprecision(6);
     cout.setf(ios::fixed);
-
-    //declaring the sorter and comparing all of its methods
-    ArraySorter arraySorter(numberOfElements, arrayToBeSorted);
-    cout << endl;
-    cout <<"Sorting "<<numberOfElements <<" randomly generated numbers:"<<endl;
-    cout <<endl;
-
-    cout <<"--------------------------------------------------" << endl;
-    cout<<"Insertion sort:"<<endl;
-    cout <<"--------------------------------------------------" << endl;
-    start = clock();
-    arraySorter.insertion_sort();
-    stop = clock();
-    executionTime = (double)(stop-start) / CLOCKS_PER_SEC;
-    cout << endl;
-    cout <<"Sorting status: ";
-    if(arraySorter.checkIfSorted()) cout <<"Sorted" << endl;
-    else cout <<"Not sorted" << endl;
-    cout<<endl<<"Execution time of Insertion sort:  "<<executionTime<<" s"<<endl;
-    arraySorter.undoSort(arrayToBeSortedOriginal);
-    cout << endl;
-
-    cout <<"--------------------------------------------------" << endl;
-    cout<<"Selection sort:"<<endl;
-    cout <<"--------------------------------------------------" << endl;
-    start = clock();
-    arraySorter.selection_sort();
-    stop = clock();
-    executionTime = (double)(stop-start) / CLOCKS_PER_SEC;
-    cout << endl;
-    cout <<"Sorting status: ";
-    if(arraySorter.checkIfSorted()) cout <<"Sorted" << endl;
-    else cout <<"Not sorted" << endl;
-    cout<<endl<<"Execution time of Selection sort:  "<<executionTime<<" s"<<endl;
-    arraySorter.undoSort(arrayToBeSortedOriginal);
-    cout << endl;
-
-    cout <<"--------------------------------------------------" << endl;
-    cout<<"Bubble Sort:"<<endl;
-    cout <<"--------------------------------------------------" << endl;
-    start = clock();
-    arraySorter.bubbleSort();
-    stop = clock();
-    executionTime = (double)(stop-start) / CLOCKS_PER_SEC;
-    cout << endl;
-    cout <<"Sorting status: ";
-    if(arraySorter.checkIfSorted()) cout <<"Sorted" << endl;
-    else cout <<"Not sorted" << endl;
-    cout<<endl<<"Execution time of Bubble Sort:  "<<executionTime<<" s"<<endl;
-    cout << endl;
-    arraySorter.undoSort(arrayToBeSortedOriginal);
-
-    cout <<"--------------------------------------------------" << endl;
-    cout<<"Merge Sort:"<<endl;
-    cout <<"--------------------------------------------------" << endl;
-    start = clock();
-    arraySorter.mergeSort(0,numberOfElements-1 );
-    stop = clock();
-    executionTime = (double)(stop-start) / CLOCKS_PER_SEC;
-    cout << endl;
-    cout <<"Sorting status: ";
-    if(arraySorter.checkIfSorted()) cout <<"Sorted" << endl;
-    else cout <<"Not sorted" << endl;
-    cout<<endl<<"Execution time of Merge Sort:  "<<executionTime<<" s"<<endl;
-    cout << endl;
-    arraySorter.undoSort(arrayToBeSortedOriginal);
-
-    cout <<"--------------------------------------------------" << endl;
-    cout<<"Quick Sort:"<<endl;
-    cout <<"--------------------------------------------------" << endl;
-    start = clock();
-    arraySorter.quicksort(0,numberOfElements-1);
-    stop = clock();
-    executionTime = (double)(stop-start) / CLOCKS_PER_SEC;
-    cout << endl;
-    cout <<"Sorting status: ";
-    if(arraySorter.checkIfSorted()) cout <<"Sorted" << endl;
-    else cout <<"Not sorted" << endl;
-    cout<<endl<<"Execution time of Quick Sort:  "<<executionTime<<" s"<<endl;
-    cout << endl;
-    arraySorter.undoSort(arrayToBeSortedOriginal);
-    cout <<"--------------------------------------------------" << endl;
-
-    //Release allocated memory
-    delete[] arrayToBeSorted;
-    delete[] arrayToBeSortedOriginal;
+    performMeasurement(ArraySorterFactory::SelectionSort,numberOfElements,arrayToBeSorted);
+    performMeasurement(ArraySorterFactory::InsertionSort,numberOfElements,arrayToBeSorted);
+    performMeasurement(ArraySorterFactory::BubbleSort,numberOfElements,arrayToBeSorted);
+    performMeasurement(ArraySorterFactory::QuickSort,numberOfElements,arrayToBeSorted);
+    performMeasurement(ArraySorterFactory::MergeSort,numberOfElements,arrayToBeSorted);
 
     return 0;
 }
-
-
