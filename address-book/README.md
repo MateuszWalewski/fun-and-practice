@@ -12,4 +12,5 @@ All contacts are loaded from a file and saved into vector to manage above operat
 It comprises:
 - The ''Record'' class to store a contact data type
 - The ''Database'' class to manage contacts 
+- "...Exceptions" files defining apropriate exceptions which derives from std:exception() and MyExcept classes
 - the main file with the user interface.
