@@ -5,7 +5,6 @@ using namespace std;
 
 
 ArraySorterInsertionSort::ArraySorterInsertionSort(int n, int t[]):numberOfElements(n),tab(t) {}
-
 ArraySorterInsertionSort::~ArraySorterInsertionSort()
 {
 

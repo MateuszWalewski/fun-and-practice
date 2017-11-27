@@ -3,16 +3,15 @@
 using namespace std;
 
 Record::Record()
-:
+    :
     firstName(""),
     lastName(""),
     phone(""),
     adress(""),
     email("")
-    {
+{
 
-    }
-
+}
 void Record::setFirstName(string inFirstName)
 {
     firstName = inFirstName;
@@ -71,5 +70,11 @@ void Record::display() const
     cout << " Id: " << getRecordNumber() << endl;
 
 }
+
+bool Record::operator<(const Record &rhs) const
+{
+    return lastName < rhs.lastName;
+}
+
 
 

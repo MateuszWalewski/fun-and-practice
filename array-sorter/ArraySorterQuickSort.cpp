@@ -5,7 +5,6 @@ using namespace std;
 
 
 ArraySorterQuickSort::ArraySorterQuickSort(int n, int t[]):numberOfElements(n),tab(t) {}
-
 ArraySorterQuickSort::~ArraySorterQuickSort()
 {
 

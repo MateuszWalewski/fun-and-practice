@@ -1,0 +1,5 @@
+1|Jan|Brzechwa|xxx-xxx-xxx|xxx|brzechwa@wp.pl|
+2|Albert|Einstein|xxx-xxx-xxx|xxx|einstein@gmail.com|
+5|Adam|Malysz|xxx-xxx-xxx|xxx|malysz@wp.pl|
+4|Adam|Mickiewicz|xxx-xxx-xxx|xxx|mick@wp.pl|
+3|Maria|Sklodowska-Curie|xxx-xxx-xxx|xxx|m.curie@gmail.com|

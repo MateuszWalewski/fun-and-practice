@@ -8,6 +8,7 @@
 
 
 using namespace std;
+// make_unique is a part of C++14 standard!
 
 unique_ptr<ArraySorter>ArraySorterFactory::createArraySorter(ArraySorterType type, int numberOfElements, int arrayToBeSorted[]){
 

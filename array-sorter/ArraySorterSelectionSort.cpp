@@ -4,9 +4,7 @@
 using namespace std;
 
 ArraySorterSelectionSort::ArraySorterSelectionSort() {}
-
 ArraySorterSelectionSort::ArraySorterSelectionSort(int n, int t[]):numberOfElements(n),tab(t) {}
-
 ArraySorterSelectionSort::~ArraySorterSelectionSort()
 {
 

@@ -1,3 +1,6 @@
+#ifndef RECORD_H
+#define RECORD_H
+
 #include <string>
 using namespace std;
 
@@ -21,6 +24,7 @@ public:
     void display() const;
     void setRecordNumber(int);
     int getRecordNumber() const;
+    bool operator<(const Record& rec) const;
 
 
 private:
@@ -31,5 +35,5 @@ private:
     string email;
     int recordNumber;
 
-
 };
+#endif

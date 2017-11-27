@@ -5,7 +5,6 @@ using namespace std;
 
 
 ArraySorterMergeSort::ArraySorterMergeSort(int n, int t[]):numberOfElements(n),tab(t) {}
-
 ArraySorterMergeSort::~ArraySorterMergeSort()
 {
 
