@@ -14,6 +14,10 @@
 	 $curr_id = $_SESSION['id'];
 	 $curr_name = $_SESSION['imie'];
 	 
+	 $curr_end = substr($curr_name, -1);
+	 if($curr_end == 'a') $_SESSION['women_flag'] = true;
+	 else $_SESSION['women_flag'] = false;
+	 
 	 mysqli_report(MYSQLI_REPORT_STRICT); // reports adjusted to try, catch
 	 
 	 try
@@ -133,15 +137,33 @@ catch(Exception $e)
 		}
 		if(isset($_SESSION['draw_flag']) && ($_SESSION['draw_flag'] == true) )
 		{
-			echo '<div id="dokonales"> Dokonałeś losowania! Wylosowana przez Ciebie
-							osoba to: '.'<span id="los_im2" >'.$_SESSION['drawn_person']. '</span>' .'. Czas rozpocząć poszukiwania! :)</p>';
-			echo  '<div id="juz" > Już dokonałeś losowania! </div>';		
+			if(isset($_SESSION['women_flag']) && ($_SESSION['women_flag'] == true))
+			{
+				echo '<div id="dokonales"> Dokonałaś losowania! Wylosowana przez Ciebie
+								osoba to: '.'<span id="los_im2" >'.$_SESSION['drawn_person']. '</span>' .'. Czas rozpocząć poszukiwania! :)</p>';
+				echo  '<div id="juz" > Już dokonałaś losowania! </div>';	
+			}
+			else
+			{
+				echo '<div id="dokonales"> Dokonałeś losowania! Wylosowana przez Ciebie
+								osoba to: '.'<span id="los_im2" >'.$_SESSION['drawn_person']. '</span>' .'. Czas rozpocząć poszukiwania! :)</p>';
+				echo  '<div id="juz" > Już dokonałeś losowania! </div>';	
+			}
 		}
 		elseif (isset($_SESSION['comment_flag_2']) && $_SESSION['comment_flag_2'] == true)
 		{
+			if(isset($_SESSION['women_flag']) && ($_SESSION['women_flag'] == true))
+			{
+				echo '<div id="dokonales"> Dokonałaś już losowania! Wylosowana przez Ciebie
+						osoba to: '.'<span id="los_im2" >'.$_SESSION['wylosowane_imie']. '</span>' .'. Czas rozpocząć poszukiwania! :)</div>';		
+				echo  '<div id="juz" > Już dokonałaś losowania! </div>';	
+			}
+			else
+			{
 				echo '<div id="dokonales"> Dokonałeś już losowania! Wylosowana przez Ciebie
 						osoba to: '.'<span id="los_im2" >'.$_SESSION['wylosowane_imie']. '</span>' .'. Czas rozpocząć poszukiwania! :)</div>';		
-				echo  '<div id="juz" > Już dokonałeś losowania! </div>';		
+				echo  '<div id="juz" > Już dokonałeś losowania! </div>';	
+			}
 		}
 		if(isset($_SESSION['comment_flag_3']) && $_SESSION['comment_flag_3'] == true)
 		{
