@@ -51,13 +51,13 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 			if(strlen($imie)<3 || (strlen($imie)>20))
 			{
 				$wszystko_OK = false;
-				$_SESSION['e_nick']="Nick musi posiadać od 3 do 20 znaków!";
+				$_SESSION['e_nick']="Imie musi posiadać od 3 do 20 znaków!";
 			}
 			
 			if(ctype_alnum($imie)==false)
 			{
 				$wszystko_OK = false;
-				$_SESSION['e_nick']="Nick może składać się tylko z liter i cyfr (bez polskich znaków)";
+				$_SESSION['e_nick']="Imie może składać się tylko z liter i cyfr (bez polskich znaków)";
 			}
 			
 			$email = $_POST['email'];
@@ -90,16 +90,12 @@ mysqli_report(MYSQLI_REPORT_STRICT);
 			$haslo_hash = password_hash($haslo1, PASSWORD_DEFAULT); // hashing password
 			
 				
-			$sekret ="6LdDQTEUAAAAAKRrozyu7GNlBh6UZ5hult_4yTs8";
-			$sprawdz = file_get_contents('https://www.google.com/recaptcha/api/siteverify?secret='.$sekret.'&response='.$_POST['g-recaptcha-response']);
 			
-			
-			$odpowiedz = json_decode($sprawdz);
-			
-			if($odpowiedz->success==false)
+			$odpowiedz = $_POST['check'];
+			if ($odpowiedz != 'terms') 
 			{
 				$wszystko_OK = false;
-				$_SESSION['e_bot']="Potwierdz, że nie jesteś botem!";
+				$_SESSION['e_bot']="Musisz zaakceptować warunki zabawy!";
 			}
 			
 			// Remeber inserted data
@@ -215,6 +211,10 @@ var merry = new Audio("snd/merry.mp3");
 <a id="reg" href="index.php">Powrót do strony logowania</a>
 <form method="post">
 
+<p><h6>
+- Imię może składać się z od 3 do 20 znaków (bez polskich!)<br>
+- Hasło musi posiadać od 8 do 20 znaków
+</h6></p>
 <input type="text" value="<?php 
 			
 			if(isset($_SESSION['fr_imie']))
@@ -224,7 +224,7 @@ var merry = new Audio("snd/merry.mp3");
 			}
 		
 		
-		?>"  name="imie" placeholder="login"/>
+		?>"  name="imie" placeholder="imie"/>
 		
 		<?php
 		
@@ -270,8 +270,11 @@ var merry = new Audio("snd/merry.mp3");
 		?>
 
  <input type="password" name="haslo2" placeholder="Powtórz hasło"/>
+<p><h6> Proszę o podawanie autentycznych imion. Administrator zastrzega sobie prawo usunięcia użytkownika z nieczytelnym loginem i
+poproszenia go on ponowną rejestrację.
+</h6></p>
 
-<div class="g-recaptcha" data-sitekey="6LdDQTEUAAAAAN8t7XBTioLJqYQNNiLaPRc2TmAf"></div>
+ <input type="checkbox" name="check" value="terms">Akceptuję powyższe warunki<br>
 
 		<?php
 		

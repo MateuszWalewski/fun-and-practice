@@ -75,8 +75,8 @@
 	
 		?>
 		<div id="responsecontainer" align="center"> </div>	
-				<div id = "usun"><button class="del2" onclick="usun()"> Usuń wszystkie osoby</button></div>
-				<div id = "zezwol"><button class="del2" onclick="zezw()">Zezwól na losowanie</button></div>
+				<div id = "usun"><button class="del2" onclick="if (confirm('Are you sure you want to delete all players?')) {usun()} else {}"> Usuń wszystkie osoby</button></div>
+				<div id = "zezwol"><button class="del2" onclick="if (confirm('Are you sure you want to start the game?')) {zezw()} else {}">Zezwól na losowanie</button></div>
 		</div>
 		
 		
